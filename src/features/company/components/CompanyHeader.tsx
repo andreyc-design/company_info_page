@@ -1,4 +1,4 @@
-const CompanyInfoHeader = () => {
+const CompanyHeader = () => {
   return (
     <header>
       <h1>HEADER</h1>
@@ -6,4 +6,4 @@ const CompanyInfoHeader = () => {
   );
 };
 
-export default CompanyInfoHeader;
+export default CompanyHeader;

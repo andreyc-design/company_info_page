@@ -1,4 +1,4 @@
-import CompanyInfo from '~features/company-info/components/CompanyInfo.tsx';
+import CompanyInfo from '~features/company/components/CompanyInfo.tsx';
 
 const CompanyInfoPage = () => {
   return <CompanyInfo />;
