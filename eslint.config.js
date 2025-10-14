@@ -2,6 +2,9 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import importPlugin from 'eslint-plugin-import';
+import react from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint'
 import {defineConfig, globalIgnores} from 'eslint/config'
 
@@ -18,6 +21,11 @@ export default defineConfig([
         languageOptions: {
             ecmaVersion: 2020,
             globals: globals.browser,
+        },
+        plugins: {
+            react,
+            'jsx-a11y': jsxA11y,
+            import: importPlugin,
         },
         rules: {
             "react-hooks/exhaustive-deps": "error",
