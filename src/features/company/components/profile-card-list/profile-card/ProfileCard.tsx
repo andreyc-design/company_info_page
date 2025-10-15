@@ -1,4 +1,4 @@
-import './ProfileCard.css';
+import './ProfileCard.module.scss';
 import React from 'react';
 
 import type { IEmployee } from '~features/company/types/Employee.ts';

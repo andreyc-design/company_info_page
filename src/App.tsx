@@ -1,10 +1,10 @@
-import './App.css';
-import CompanyInfoPage from '~pages/CompanyInfoPage.tsx';
+import './App.scss';
+import CompanyPage from '~pages/company';
 
 function App() {
   return (
     <>
-      <CompanyInfoPage />
+      <CompanyPage />
     </>
   );
 }

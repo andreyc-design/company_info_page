@@ -1,7 +1,7 @@
 import CompanyInfo from '~features/company/components/CompanyInfo.tsx';
 
-const CompanyInfoPage = () => {
+const CompanyPage = () => {
   return <CompanyInfo />;
 };
 
-export default CompanyInfoPage;
+export default CompanyPage;
