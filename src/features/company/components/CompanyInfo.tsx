@@ -1,6 +1,5 @@
-import CompanyFooter from './CompanyFooter.tsx';
-import CompanyHeader from './CompanyHeader.tsx';
-
+import CompanyFooter from '~features/company/components/CompanyFooter.tsx';
+import CompanyHeader from '~features/company/components/CompanyHeader.tsx';
 import ProfileCardList from '~features/company/components/profile-card-list/ProfileCardList.tsx';
 import { EMPLOYEES } from '~mock/index.ts';
 

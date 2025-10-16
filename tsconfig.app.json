@@ -26,7 +26,11 @@
       "~components/*": ["components/*"],
       "~pages/*": ["pages/*"],
       "~features/*": ["features/*"],
-      "~mock/*": ["mock/*"]
+      "~mock/*": ["mock/*"],
+      "~constants/*": ["constants/*"],
+      "~shared/*": ["shared/*"],
+      "~routes/*": ["routes/*"],
+      "~routes": ["routes"]
     },
     "include": ["src"]
   }

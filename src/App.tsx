@@ -1,10 +1,12 @@
 import './App.scss';
-import CompanyPage from '~pages/company';
+import { AppRoutes } from '~routes';
+import Navbar from '~shared/components/navbar/Navbar.tsx';
 
 function App() {
   return (
     <>
-      <CompanyPage />
+      <Navbar />
+      <AppRoutes />
     </>
   );
 }

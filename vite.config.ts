@@ -12,6 +12,10 @@ export default defineConfig({
       '~pages': path.resolve(__dirname, 'src/pages'),
       '~features': path.resolve(__dirname, 'src/features'),
       '~mock': path.resolve(__dirname, 'src/mock'),
+      '~constants': path.resolve(__dirname, 'src/constants'),
+      '~shared': path.resolve(__dirname, 'src/shared'),
+      '~assets': path.resolve(__dirname, 'src/assets'),
+      '~routes': path.resolve(__dirname, 'src/routes'),
     },
   },
 });

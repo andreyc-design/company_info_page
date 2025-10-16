@@ -1,6 +1,6 @@
-import './ProfileCard.module.scss';
 import React from 'react';
 
+import styles from '~features/company/components/profile-card-list/profile-card/ProfileCard.module.scss';
 import type { IEmployee } from '~features/company/types/Employee.ts';
 
 type ProfileCardProps = {
@@ -9,7 +9,7 @@ type ProfileCardProps = {
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ item }) => {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <p>
         First Name: <b>{item.firstName}</b>
       </p>
