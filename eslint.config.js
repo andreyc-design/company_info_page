@@ -39,7 +39,7 @@ export default defineConfig([
             }],
 
             "@typescript-eslint/no-explicit-any": "error",
-            "@typescript-eslint/no-unused-vars": "error",
+            "@typescript-eslint/no-unused-vars": ['error', { 'argsIgnorePattern': '^_', 'varsIgnorePattern': '^_' }],
 
             "react/jsx-boolean-value": ["error", "never"],
             "react/self-closing-comp": "error"

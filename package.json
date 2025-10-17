@@ -1,5 +1,6 @@
 {
   "name": "company_info_page",
+  "homepage": "https://andreyc-design.github.io/company_info_page",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,15 +10,19 @@
     "preview": "vite preview",
     "prepare": "husky",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "formik": "^2.4.6",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.9.4",
     "react-router-dom": "^7.9.4",
-    "sass": "^1.93.2"
+    "sass": "^1.93.2",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

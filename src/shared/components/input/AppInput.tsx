@@ -1,40 +1,29 @@
-import type { ChangeEvent, FC, RefObject } from 'react';
+import { type FieldInputProps, useField } from 'formik';
+import type { FC, RefObject } from 'react';
 
 import styles from '~shared/components/input/AppInput.module.scss';
 import type { SupportedInputType } from '~shared/types/SupportedInputType.ts';
 
-type AppInputProps = {
+type AppInputCustomProps = {
   type: SupportedInputType;
-  name: string;
-  onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
-  value: string;
   placeholder?: string;
   ref?: RefObject<HTMLInputElement>;
   maxlength?: number;
-  onBlurHandler?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const AppInput: FC<AppInputProps> = ({
-  type,
-  name,
-  value,
-  onChangeHandler,
-  ref,
-  maxlength,
-  placeholder,
-  onBlurHandler,
-}) => {
+type AppInputProps = AppInputCustomProps & FieldInputProps<string>;
+
+const AppInput: FC<AppInputProps> = ({ type, ref, maxlength, placeholder, ...props }) => {
+  const [field] = useField(props);
+
   return (
     <input
       className={styles.appInput}
       type={type}
-      value={value}
       ref={ref}
-      name={name}
       maxLength={maxlength}
       placeholder={placeholder}
-      onChange={onChangeHandler}
-      onBlur={onBlurHandler}
+      {...field}
     />
   );
 };

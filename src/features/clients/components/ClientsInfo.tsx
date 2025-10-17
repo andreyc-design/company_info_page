@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import ClientsList from '~features/clients/components/ClientsList.tsx';
 import AddClientDialog from '~features/clients/components/add-client-dialog/AddClientDialog.tsx';
@@ -14,20 +14,11 @@ const ClientsInfo = () => {
   const [isOpenAddClientDialog, setIsOpenAddClientDialog] = useState(false);
   const [isOpenClientDialog, setIsOpenClientDialog] = useState<boolean>(false);
 
-  const openClientDialog = (client: IClient) => {
-    selectedClient.current = client;
-    setIsOpenClientDialog(true);
-  };
-
-  const closeClientDialog = () => {
-    setIsOpenClientDialog(false);
-  };
-
   const addClient = (formClientData: IAddClientFormData) => {
     const lastIdx = clients.length - 1;
     const id = clients[lastIdx].id + 1;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, ...clientData } = formClientData;
+
+    const { password: _, ...clientData } = formClientData;
 
     const newClient: IClient = { ...clientData, id, balance: 0 };
 
@@ -46,20 +37,25 @@ const ClientsInfo = () => {
     setIsOpenAddClientDialog(true);
   };
 
-  const closeAddClientDialog = () => {
+  const closeAddClientDialog = useCallback(() => {
     setIsOpenAddClientDialog(false);
-  };
+  }, []);
+
+  const openClientDialog = useCallback((client: IClient) => {
+    selectedClient.current = client;
+    setIsOpenClientDialog(true);
+  }, []);
+
+  const closeClientDialog = useCallback(() => {
+    setIsOpenClientDialog(false);
+  }, []);
 
   return (
     <ClientMethodsContext value={{ add: addClient, remove: removeClient }}>
       <div>
         <h1>Clients List</h1>
 
-        {isOpenAddClientDialog ? (
-          <AddClientDialog close={closeAddClientDialog} addClient={addClient} />
-        ) : (
-          <></>
-        )}
+        {isOpenAddClientDialog ? <AddClientDialog close={closeAddClientDialog} /> : <></>}
 
         {isOpenClientDialog ? (
           <ClientDialog client={selectedClient.current!} close={closeClientDialog} />

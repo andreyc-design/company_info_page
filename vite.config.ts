@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/company_info_page',
   resolve: {
     alias: {
       '~components': path.resolve(__dirname, 'src/components'),
