@@ -1,0 +1,11 @@
+@use "~shared/styles/colors" as colors;
+
+.appInput {
+  border: 1px solid colors.$black-01;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: colors.$black-01
+}

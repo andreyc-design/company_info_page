@@ -1,0 +1,11 @@
+@use "~shared/styles/colors" as colors;
+
+.clientForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  &__submitBtn {
+    margin-top: 24px;
+  }
+}

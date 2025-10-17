@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import ClientItem from '~features/clients/components/ClientItem.tsx';
+import ClientItem from '~features/clients/components/client-dialog/client-item/ClientItem.tsx';
 import type { IClient } from '~features/clients/types/Client.ts';
 import AppDialog from '~shared/components/dialog/AppDialog.tsx';
 
