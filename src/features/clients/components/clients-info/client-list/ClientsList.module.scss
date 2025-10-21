@@ -1,0 +1,13 @@
+@use "~shared/styles/colors" as colors;
+
+.clientItem {
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: colors.$grey-01;
+
+    &_active {
+      color: colors.$black-01;
+    }
+  }
+}

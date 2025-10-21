@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <AppRoutes />
+      <div className={'contentWrap'}>
+        <AppRoutes />
+      </div>
     </>
   );
 }

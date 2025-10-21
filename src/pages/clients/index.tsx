@@ -1,4 +1,4 @@
-import ClientsInfo from '~features/clients/components/ClientsInfo.tsx';
+import ClientsInfo from '~features/clients/components/clients-info/ClientsInfo.tsx';
 
 const ClientsPage = () => {
   return <ClientsInfo />;

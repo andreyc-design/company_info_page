@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import AddClientForm from '~features/clients/components/add-client-dialog/add-client-form/AddClientForm.tsx';
+import AddClientForm from '~features/clients/components/clients-info/add-client-dialog/add-client-form/AddClientForm.tsx';
 import AppDialog from '~shared/components/dialog/AppDialog.tsx';
 
 type AddClientDialogProps = {

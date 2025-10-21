@@ -2,31 +2,31 @@ import cn from 'classnames';
 import { ErrorMessage, Form, Formik, type FormikHelpers } from 'formik';
 import { type FC, useContext } from 'react';
 
-import styles from '~features/clients/components/add-client-dialog/add-client-form/AddClientForm.module.scss';
+import styles from '~features/clients/components/clients-info/add-client-dialog/add-client-form/AddClientForm.module.scss';
 import {
   ADD_CLIENT_INPUT_CONFIGS,
   ADD_CLIENT_VALIDATION_SCHEMA,
 } from '~features/clients/constants';
 import { ClientMethodsContext } from '~features/clients/contexts';
-import type { IAddClientFormData } from '~features/clients/types/Client.ts';
-import AppInput from '~shared/components/input/AppInput.tsx';
+import type { AddClientFormData } from '~features/clients/types/AddClientFormData.ts';
+import AppFormField from '~shared/components/form-field/AppFormField.tsx';
 
 const AddClientForm: FC = () => {
-  const clientFormInitialData: IAddClientFormData = {
-    firstName: '',
-    lastName: '',
+  const clientFormInitialData: AddClientFormData = {
+    username: '',
     email: '',
     password: '',
+    phone: '',
   };
 
   const clientMethodsContext = useContext(ClientMethodsContext)!;
   const inputConfigs = [...ADD_CLIENT_INPUT_CONFIGS];
 
-  const handleSubmit = (
-    clientFormData: IAddClientFormData,
-    { setSubmitting }: FormikHelpers<IAddClientFormData>
+  const handleSubmit = async (
+    clientFormData: AddClientFormData,
+    { setSubmitting }: FormikHelpers<AddClientFormData>
   ) => {
-    clientMethodsContext.add(clientFormData);
+    await clientMethodsContext.add(clientFormData);
     setSubmitting(false);
   };
 
@@ -39,12 +39,12 @@ const AddClientForm: FC = () => {
         validationSchema={ADD_CLIENT_VALIDATION_SCHEMA}
         onSubmit={handleSubmit}
       >
-        {({ values, handleChange, handleBlur, isValid, dirty }) => (
+        {({ values, handleChange, handleBlur, isValid, dirty, isSubmitting }) => (
           <Form className={styles.clientForm}>
             {inputConfigs.map(({ type, name, placeholder, maxLength }) => {
               return (
                 <div key={name}>
-                  <AppInput
+                  <AppFormField
                     type={type}
                     name={name}
                     placeholder={placeholder}
@@ -60,9 +60,9 @@ const AddClientForm: FC = () => {
             })}
 
             <button
-              className={cn('appBtn', 'appBtn--dark', styles.clientForm__submitBtn)}
+              className={cn('appBtn', 'appBtn_dark', styles.clientForm__submitBtn)}
               type="submit"
-              disabled={!isValid || !dirty}
+              disabled={!isValid || !dirty || isSubmitting}
             >
               Submit
             </button>

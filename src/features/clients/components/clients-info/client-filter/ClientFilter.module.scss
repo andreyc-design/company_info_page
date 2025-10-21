@@ -1,0 +1,19 @@
+@use "~shared/styles/colors" as colors;
+@use "~shared/styles/btns";
+
+.filterBlock {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.filterBtn {
+  @extend %appBtn;
+  color: colors.$white-01;
+  cursor: pointer;
+  background-color: colors.$grey-01;
+
+  &_active {
+    cursor: default;
+    background-color: colors.$black-01;
+  }
+}

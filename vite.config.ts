@@ -1,23 +1,29 @@
 import path from 'path';
 
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: '/company_info_page',
-  resolve: {
-    alias: {
-      '~components': path.resolve(__dirname, 'src/components'),
-      '~pages': path.resolve(__dirname, 'src/pages'),
-      '~features': path.resolve(__dirname, 'src/features'),
-      '~mock': path.resolve(__dirname, 'src/mock'),
-      '~constants': path.resolve(__dirname, 'src/constants'),
-      '~shared': path.resolve(__dirname, 'src/shared'),
-      '~assets': path.resolve(__dirname, 'src/assets'),
-      '~routes': path.resolve(__dirname, 'src/routes'),
-      '~utils': path.resolve(__dirname, 'src/utils'),
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, './environment');
+
+  process.env = { ...process.env, ...env };
+
+  return {
+    plugins: [react()],
+    base: '/company_info_page',
+    resolve: {
+      alias: {
+        '~components': path.resolve(__dirname, 'src/components'),
+        '~pages': path.resolve(__dirname, 'src/pages'),
+        '~features': path.resolve(__dirname, 'src/features'),
+        '~mock': path.resolve(__dirname, 'src/mock'),
+        '~constants': path.resolve(__dirname, 'src/constants'),
+        '~shared': path.resolve(__dirname, 'src/shared'),
+        '~assets': path.resolve(__dirname, 'src/assets'),
+        '~routes': path.resolve(__dirname, 'src/routes'),
+        '~utils': path.resolve(__dirname, 'src/utils'),
+      },
     },
-  },
+  };
 });

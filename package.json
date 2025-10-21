@@ -11,14 +11,18 @@
     "prepare": "husky",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "format": "prettier --write .",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build:staging": "cp environment/.env.staging .env && tsc -b && vite build --mode staging",
+    "build:prod": "cp environment/.env.production .env && tsc -b && vite build --mode production"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.1",
     "classnames": "^2.5.1",
     "formik": "^2.4.6",
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
     "react-router": "^7.9.4",
     "react-router-dom": "^7.9.4",
     "sass": "^1.93.2",

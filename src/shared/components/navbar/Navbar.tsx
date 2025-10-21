@@ -6,7 +6,7 @@ import styles from '~shared/components/navbar/Navbar.module.scss';
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link to={ROUTES.CLIENTS} className={styles.navbar__link}>
+      <Link to={ROUTES.CLIENTS.HOME} className={styles.navbar__link}>
         Clients
       </Link>
       <Link to={ROUTES.COMPANY} className={styles.navbar__link}>

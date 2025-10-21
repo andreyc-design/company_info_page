@@ -1,0 +1,19 @@
+.clientDetails {
+  padding: 24px 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__editBtn,
+  &__removeBtn {
+    max-width: 200px;
+  }
+
+  &__actionsContainer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+    width: 100%;
+  }
+}

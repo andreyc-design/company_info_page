@@ -1,14 +1,11 @@
-export interface IClientCommonData {
-  firstName: string;
-  lastName: string;
+export interface IClient {
+  username: string;
   email: string;
-}
-
-export interface IClient extends IClientCommonData {
-  id: number;
-  balance: number;
-}
-
-export interface IAddClientFormData extends IClientCommonData {
   password: string;
+  phone: string;
+  id: number;
+}
+
+export interface IClientWithActive extends IClient {
+  isActive: boolean;
 }
