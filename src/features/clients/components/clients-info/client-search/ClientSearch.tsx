@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, FC } from 'react';
 
 import AppInput from '~shared/components/input/AppInput.tsx';
 
