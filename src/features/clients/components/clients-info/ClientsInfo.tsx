@@ -67,29 +67,25 @@ const ClientsInfo = () => {
   );
 
   const listTemplate = useMemo(() => {
-    if (!isClientsLoading && !isClientsError) {
-      return (
-        <>
-          {filteredClients.length ? (
-            <ClientsList clients={filteredClients} onClickClientHandler={navToClient} />
-          ) : (
-            <h3>Client's list is empty</h3>
-          )}
+    const listWithAddClient = (
+      <>
+        {filteredClients.length ? (
+          <ClientsList clients={filteredClients} onClickClientHandler={navToClient} />
+        ) : (
+          <h3>Client's list is empty</h3>
+        )}
 
-          <button onClick={openAddClientDialog}>Add Client</button>
-        </>
-      );
-    }
+        <button onClick={openAddClientDialog}>Add Client</button>
+      </>
+    );
 
-    if (isClientsError) {
-      return <h3>Something went wrong</h3>;
-    }
-
-    if (isClientsLoading) {
-      return <h3>Loading...</h3>;
-    }
-
-    return <></>;
+    return isClientsError ? (
+      <h3>Something went wrong</h3>
+    ) : isClientsLoading ? (
+      <h3>Loading...</h3>
+    ) : (
+      listWithAddClient
+    );
   }, [isClientsError, isClientsLoading, filteredClients, navToClient, openAddClientDialog]);
 
   return (
