@@ -79,6 +79,10 @@ const ClientDetails: FC = () => {
     }
   }, [removeClient, navigate, client]);
 
+  const handleGoBack = () => {
+    navigate(ROUTES.CLIENTS.HOME);
+  };
+
   const template = () => {
     if (isLoadingClient || isLoadingRemoveClient) {
       return <h1>Loading...</h1>;
@@ -140,7 +144,14 @@ const ClientDetails: FC = () => {
     }
   };
 
-  return <div className={styles.clientDetails}>{template()}</div>;
+  return (
+    <div className={styles.clientDetails}>
+      <button className={styles.clientDetails__backBtn} onClick={handleGoBack}>
+        Go Back
+      </button>
+      {template()}
+    </div>
+  );
 };
 
 export default ClientDetails;

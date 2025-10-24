@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import AddClientForm from '~features/clients/components/clients-info/add-client-dialog/add-client-form/AddClientForm.tsx';
+import AddClient from '~features/clients/components/clients-info/add-client-dialog/add-client/AddClient.tsx';
 import AppDialog from '~shared/components/dialog/AppDialog.tsx';
 
 type AddClientDialogProps = {
@@ -10,7 +10,7 @@ type AddClientDialogProps = {
 const addClientDialog: FC<AddClientDialogProps> = ({ close }) => {
   return (
     <AppDialog disableBackdropClose close={close}>
-      <AddClientForm />
+      <AddClient />
     </AppDialog>
   );
 };

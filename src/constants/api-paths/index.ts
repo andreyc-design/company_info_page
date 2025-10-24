@@ -4,4 +4,8 @@ export const API_PATHS = {
 
     buildItemPath: (id: number | string) => `/users/${id}`,
   },
+
+  AUTH: {
+    LOGIN: '/auth/login',
+  },
 };

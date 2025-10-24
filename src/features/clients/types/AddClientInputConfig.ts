@@ -1,9 +1,6 @@
 import type { AddClientFormData } from '~features/clients/types/AddClientFormData.ts';
-import type { SupportedInputType } from '~shared/types/SupportedInputType.ts';
+import type { IInputConfig } from '~shared/types/InputConfig.ts';
 
-export interface IAddClientInputConfig {
+export interface IAddClientInputConfig extends IInputConfig {
   name: keyof AddClientFormData;
-  placeholder: string;
-  type: SupportedInputType;
-  maxLength?: number;
 }

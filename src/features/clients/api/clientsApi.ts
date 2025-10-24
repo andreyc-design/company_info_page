@@ -3,7 +3,7 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 import { API_PATHS } from '~constants/api-paths';
 import type { IClient, IClientWithActive } from '~features/clients/types/Client.ts';
 import { ClientApiTags } from '~features/clients/types/ClientApiTags.ts';
-import { BASE_QUERY } from '~shared/components/api/rootApi.ts';
+import { BASE_QUERY } from '~shared/api/rootApi.ts';
 import { HttpMethods } from '~shared/types/HttpMethods.ts';
 
 export const clientsApi = createApi({
